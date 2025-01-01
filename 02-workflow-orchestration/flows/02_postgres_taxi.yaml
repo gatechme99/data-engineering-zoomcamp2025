@@ -53,7 +53,6 @@ tasks:
 
       # Create final green table to hold all combined data
       - id: green_final_table
-        # runIf: "{{inputs.taxi == 'green'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           CREATE TABLE IF NOT EXISTS {{render(vars.final_table)}} (
@@ -83,7 +82,6 @@ tasks:
 
       # Create green monthly table (staging)
       - id: green_monthly_table
-        # runIf: "{{inputs.taxi == 'green'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           CREATE TABLE IF NOT EXISTS {{render(vars.table)}} (
@@ -110,14 +108,13 @@ tasks:
           );
 
       # Remove data inside monthly staging table to prevent duplication
-      - id: truncate_table
+      - id: truncate_green_monthly_table
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           TRUNCATE TABLE {{render(vars.table)}};
 
       # Copy data into green monthly table (staging)
       - id: green_copy_in
-        # runIf: "{{inputs.taxi == 'green'}}"
         type: io.kestra.plugin.jdbc.postgresql.CopyIn
         format: CSV
         from: "{{render(vars.data)}}"
@@ -127,7 +124,6 @@ tasks:
 
       # Add unique id using MD5 hash and filename to green monthly table (staging)
       - id: green_add_unique_id_and_filename
-        # runIf: "{{inputs.taxi == 'green'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           ALTER TABLE {{render(vars.table)}}
@@ -149,7 +145,6 @@ tasks:
 
       # Merge data from green monthly staging table into main table to get complete data set
       - id: green_merge_data
-        # runIf: "{{inputs.taxi == 'green'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           MERGE INTO {{render(vars.final_table)}} AS T
@@ -177,7 +172,6 @@ tasks:
 
       # Create final yellow table to hold all combined data
       - id: yellow_final_table
-        # runIf: "{{inputs.taxi == 'yellow'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           CREATE TABLE IF NOT EXISTS {{render(vars.final_table)}} (
@@ -205,7 +199,6 @@ tasks:
 
       # Create yellow monthly table (staging)
       - id: yellow_monthly_table
-        # runIf: "{{inputs.taxi == 'yellow'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           CREATE TABLE IF NOT EXISTS {{render(vars.table)}} (
@@ -230,14 +223,13 @@ tasks:
           );
   
       # Remove data inside monthly staging table to prevent duplication
-      - id: truncate_table
+      - id: truncate_yellow_monthly_table
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           TRUNCATE TABLE {{render(vars.table)}};
   
       # Copy data into yellow monthly table (staging)
       - id: yellow_copy_in
-        # runIf: "{{inputs.taxi == 'yellow'}}"
         type: io.kestra.plugin.jdbc.postgresql.CopyIn
         format: CSV
         from: "{{render(vars.data)}}"
@@ -247,7 +239,6 @@ tasks:
 
       # Add unique id using MD5 hash and filename to yellow monthly table (staging)
       - id: yellow_add_unique_id_and_filename
-        # runIf: "{{inputs.taxi == 'yellow'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           ALTER TABLE {{render(vars.table)}}
@@ -269,7 +260,6 @@ tasks:
 
       # Merge data from yellow monthly staging table into main table to get complete data set
       - id: yellow_merge_data
-        # runIf: "{{inputs.taxi == 'yellow'}}"
         type: io.kestra.plugin.jdbc.postgresql.Queries
         sql: |
           MERGE INTO {{render(vars.final_table)}} AS T
