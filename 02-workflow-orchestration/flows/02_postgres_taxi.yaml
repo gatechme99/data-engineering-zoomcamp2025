@@ -282,13 +282,13 @@ tasks:
   # Remove generated files to save memory
   - id: purge_files
     type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
-    description: This will remove output files. If you would like to explore Kestra outputs, disable it.
+    description: This will remove downloaded files. To explore Kestra outputs, set disabled to true.
     disabled: false
 
 # Database connection properties
 pluginDefaults:
   - type: io.kestra.plugin.jdbc.postgresql
     values:
-      url: jdbc:postgresql://host.docker.internal:5432/kestra
+      url: jdbc:postgresql://postgres:5432/kestra
       username: kestra
       password: k3str4
