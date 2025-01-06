@@ -2,21 +2,23 @@ id: 04_gcp_kv
 namespace: zoomcamp
 
 tasks:
-  - id: gcp_creds
-    type: io.kestra.plugin.core.kv.Set
-    key: GCP_CREDS
-    kvType: JSON
-    value: |
-      {
-        "type": "service_account",
-        "project_id": "...",
-      }
+  # Set up in Kestra > Namespaces > KV Store
+  #
+  # - id: gcp_creds
+  #   type: io.kestra.plugin.core.kv.Set
+  #   key: GCP_CREDS
+  #   kvType: JSON
+  #   value: |
+  #     {
+  #       "type": "service_account",
+  #       "project_id": "...",
+  #     }
 
   - id: gcp_project_id
     type: io.kestra.plugin.core.kv.Set
     key: GCP_PROJECT_ID
     kvType: STRING
-    value: kestra-sandbox # TODO replace with your project id
+    value: dtc-de-zoomcamp-446201
 
   - id: gcp_location
     type: io.kestra.plugin.core.kv.Set
@@ -28,7 +30,7 @@ tasks:
     type: io.kestra.plugin.core.kv.Set
     key: GCP_BUCKET_NAME
     kvType: STRING
-    value: your-name-kestra # TODO make sure it's globally unique!
+    value: kestra-de-zoomcamp-446201
 
   - id: gcp_dataset
     type: io.kestra.plugin.core.kv.Set
