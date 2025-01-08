@@ -11,6 +11,13 @@ sources:
          # freshness:
            # error_after: {count: 6, period: hour}
 
+# Generated base by compiling the following generate_model_yaml macro after adding codegen package:
+# 
+# {{ codegen.generate_model_yaml(
+#     model_names=['customers']
+# ) }}
+#
+# Added tests after copying in compiled code.
 models:
     - name: stg_green_tripdata
       description: >
