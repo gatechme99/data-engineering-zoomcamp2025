@@ -34,6 +34,10 @@ def main(params):
             df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
         if 'tpep_dropoff_datetime' in df.columns:
             df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+        if 'lpep_pickup_datetime' in df.columns:
+            df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
+        if 'lpep_dropoff_datetime' in df.columns:
+            df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
     else:
         print(f'Unsupported file format: {file_name}')
         return
