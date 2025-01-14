@@ -6,8 +6,10 @@ Run docker with the `python:3.12.8` image in an interactive mode, use the entryp
 
 What's the version of `pip` in the image?
 
+### Answer 1. Understanding docker first run
 
 **CLI command: `docker run -it python:3.12.8 /bin/bash`**
+
 **Answer: 24.3.1**
 
 
@@ -47,6 +49,7 @@ volumes:
     name: vol-pgadmin_data
 ```
 
+### Answer 2. Understanding Docker networking and docker-compose
 
 **Answer: db:5432**
 
@@ -80,6 +83,7 @@ During the period of October 1st 2019 (inclusive) and November 1st 2019 (exclusi
 4. In between 7 (exclusive) and 10 miles (inclusive),
 5. Over 10 miles 
 
+### Answer 3. Trip Segmentation Count
 
 **SQL Query**
 ```
@@ -93,8 +97,7 @@ FROM green_taxi_trips g
 WHERE g.lpep_pickup_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31'
 ```
 
-**Answer**
-**104,838;  199,013;  109,645;  27,688;  35,202**
+**Answer: 104,838;  199,013;  109,645;  27,688;  35,202**
 
 
 ## Question 4. Longest trip for each day
@@ -109,6 +112,7 @@ Tip: For every day, we only care about one single trip with the longest distance
 - 2019-10-26
 - 2019-10-31
 
+### Answer 4. Longest trip for each day
 
 **SQL Query**
 ```
@@ -123,13 +127,15 @@ ORDER BY 2 DESC
 
 **Answer: 2019-10-31**
 
+
 ## Question 5. Three biggest pickup zones
 
 Which were the top pickup locations with over 13,000 in
 `total_amount` (across all trips) for 2019-10-18?
 
 Consider only `lpep_pickup_datetime` when filtering by date.
- 
+
+### Answer 5. Three biggest pickup zones
 
 **SQL Query**
 ```
@@ -162,6 +168,7 @@ Note: it's `tip` , not `trip`
 
 We need the name of the zone, not the ID.
 
+### Answer 6. Largest tip
 
 **SQL Query**
 ```
@@ -207,5 +214,7 @@ Which of the following sequences, **respectively**, describes the workflow for:
 1. Downloading the provider plugins and setting up backend,
 2. Generating proposed changes and auto-executing the plan
 3. Remove all resources managed by terraform`
+
+### Answer 7. Terraform Workflow
 
 **Answer: terraform init, terraform apply -auto-aprove, terraform destroy**
