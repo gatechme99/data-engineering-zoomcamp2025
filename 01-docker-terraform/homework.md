@@ -95,9 +95,10 @@ SELECT
 	COUNT(CASE WHEN g.trip_distance > 10 THEN 1 END) as over_10
 FROM green_taxi_trips g
 WHERE g.lpep_pickup_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31'
+	AND g.lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31'
 ```
 
-**Answer: 104,838;  199,013;  109,645;  27,688;  35,202**
+**Answer: 104,802; 198,924; 109,603; 27,678; 35,189**
 
 
 ## Question 4. Longest trip for each day
@@ -182,7 +183,8 @@ WITH base_table AS (
 	FROM green_taxi_trips g
 	INNER JOIN taxi_zones zpu ON zpu."LocationID" = g."PULocationID"
 	INNER JOIN taxi_zones zdo ON zdo."LocationID" = g."DOLocationID"
-	WHERE zpu."Zone" = 'East Harlem North'
+	WHERE zpu."Zone" = 'East Harlem North' 
+    AND g.lpep_pickup_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31'
 
 )
 
