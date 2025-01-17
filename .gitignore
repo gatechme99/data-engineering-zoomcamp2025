@@ -1,8 +1,14 @@
+.devcontainer
+.github
+
 01-docker-terraform/2_docker_sql/data_pgadmin/pgadmin4.db
 
 02-workflow-orchestration/flows/04_gcp_kv.yaml
 /workspaces/data-engineering-zoomcamp2025/02-workflow-orchestration/flows/04_gcp_kv.yaml
 
-spark
-
-notebooks
+05-batch/spark
+05-batch/notebooks
+05-batch/code/config_setup.md
+05-batch/code/.ipynb_checkpoints
+05-batch/code/*.csv
+05-batch/code/*.gz

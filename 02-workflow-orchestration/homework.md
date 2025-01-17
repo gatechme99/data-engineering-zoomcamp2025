@@ -54,6 +54,9 @@
 
 **Answer 5: TK**
 
+
+## Quiz Question 6
+
 6) How would you configure the timezone to New York in a Schedule trigger?
 - Add a `timezone` property set to `EST` in the `Schedule` trigger configuration  
 - Add a `timezone` property set to `America/New_York` in the `Schedule` trigger configuration
