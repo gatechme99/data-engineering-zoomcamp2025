@@ -30,6 +30,12 @@
 - 18,324,219
 - 29,430,127
 
+```
+SELECT COUNT(*) AS num_rows
+FROM `dtc-de-zoomcamp-446201.zoomcamp.yellow_tripdata` 
+WHERE filename LIKE '%2020%'
+```
+
 **Answer 3: 24,648,499**
 
 
@@ -41,18 +47,32 @@
 - 1,734,051
 - 1,342,034
 
+```
+SELECT COUNT(*) AS num_rows
+FROM `dtc-de-zoomcamp-446201.zoomcamp.green_tripdata` 
+WHERE filename LIKE '%2020%'
+```
+
 **Answer 4: 1,734,051**
 
 
 ## Quiz Question 5
 
-5) Using dbt on the `Green` and `Yellow` Taxi data for the year 2020, how many rows are there in the `fact_trips` table?
-- 198
-- 165
-- 151
-- 203
+5) How many rows are there for the `Yellow` Taxi data for the March 2021 CSV file?
+- 1,428,092
+- 706,911
+- 1,925,152
+- 2,561,031
 
-**Answer 5: TK**
+```
+SQL Query
+
+SELECT COUNT(*) AS num_rows
+FROM `dtc-de-zoomcamp-446201.zoomcamp.yellow_tripdata` 
+WHERE filename = 'yellow_tripdata_2021-03.csv'
+```
+
+**Answer 5: 1,925,152**
 
 
 ## Quiz Question 6
