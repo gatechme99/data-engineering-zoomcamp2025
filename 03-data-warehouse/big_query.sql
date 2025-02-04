@@ -5,18 +5,18 @@ LIMIT 100;
 
 
 -- Creating external table referring to gcs path
-CREATE OR REPLACE EXTERNAL TABLE `taxi-rides-ny.nytaxi.external_yellow_tripdata`
+CREATE OR REPLACE EXTERNAL TABLE `dtc-de-zoomcamp-446201.zoomcamp.external_yellow_tripdata`
 OPTIONS (
-  format = 'CSV',
-  uris = ['gs://nyc-tl-data/trip data/yellow_tripdata_2019-*.csv', 'gs://nyc-tl-data/trip data/yellow_tripdata_2020-*.csv']
+  format = 'PARQUET',
+  uris = ['gs://yellow_taxi_trips_2024/yellow_tripdata_2024-*.parquet']
 );
 
 -- Check yellow trip data
-SELECT * FROM taxi-rides-ny.nytaxi.external_yellow_tripdata limit 10;
+SELECT * FROM `dtc-de-zoomcamp-446201.zoomcamp.external_yellow_tripdata` limit 10;
 
 -- Create a non partitioned table from external table
-CREATE OR REPLACE TABLE taxi-rides-ny.nytaxi.yellow_tripdata_non_partitoned AS
-SELECT * FROM taxi-rides-ny.nytaxi.external_yellow_tripdata;
+CREATE OR REPLACE TABLE `dtc-de-zoomcamp-446201.zoomcamp.yellow_tripdata_non_partitoned` AS
+SELECT * FROM `dtc-de-zoomcamp-446201.zoomcamp.external_yellow_tripdata`;
 
 
 -- Create a partitioned table from external table
