@@ -40,7 +40,7 @@ Question 1: What is count of records for the 2024 Yellow Taxi Data?
 
 **Answer 1: 20,332,093**
 
-![answer1](./03-data-warehouse/images/Answer1.pngraw=true)
+![answer1](./03-data-warehouse/images/Answer1.png?raw=true)
 
 
 ## Question 2:
