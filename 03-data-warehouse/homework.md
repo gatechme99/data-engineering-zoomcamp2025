@@ -53,8 +53,8 @@ What is the **estimated amount** of data that will be read when this query is ex
 - 0 MB for the External Table and 0MB for the Materialized Table
 
 **Answer 2: 0 MB for the External Table and 155.12 MB for the Materialized Table**
-![answer_2_bq_materialized] (/images/Answer2a.png)
-![answer_2_bq_external] (/images/Answer2b.png)
+![answer_2_bq_materialized](./images/Answer2a.png)
+![answer_2_bq_external](./images/Answer2b.png)
 
 ## Question 3:
 Write a query to retrieve the PULocationID from the table (not the external table) in BigQuery. Now write a query to retrieve the PULocationID and DOLocationID on the same table. Why are the estimated number of Bytes different?
@@ -64,8 +64,8 @@ Write a query to retrieve the PULocationID from the table (not the external tabl
 - When selecting multiple columns, BigQuery performs an implicit join operation between them, increasing the estimated bytes processed
 
 **Answer 3: BigQuery is a columnar database, and it only scans the specific columns requested in the query. Querying two columns (PULocationID, DOLocationID) requires reading more data than querying one column (PULocationID), leading to a higher estimated number of bytes processed.**
-![answer_3_bq_1col] (/images/Answer3a.png)
-![answer_3_bq_2col] (/images/Answer3b.png)
+![answer_3_bq_1col](./images/Answer3a.png)
+![answer_3_bq_2col](./images/Answer3b.png)
 
 ## Question 4:
 How many records have a fare_amount of 0?
@@ -124,8 +124,8 @@ SELECT COUNT(DISTINCT VendorID)
 FROM `dtc-de-zoomcamp-446201.zoomcamp.yellow_tripdata_non_partitoned`
 WHERE DATE(tpep_dropoff_datetime) BETWEEN '2024-03-01' AND '2024-03-15'
 ```
-![answer_6a_bq] (/images/Answer6a.png)
-![answer_6b_bq] (/images/Answer6b.png)
+![answer_6a_bq](./images/Answer6a.png)
+![answer_6b_bq](./images/Answer6b.png)
 
 ## Question 7: 
 Where is the data stored in the External Table you created?
