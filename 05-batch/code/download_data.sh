@@ -1,6 +1,7 @@
 set -e
 
-TAXI_TYPE=$1 # "yellow"
+# example bash command line: ./download_data.sh yellow 2020
+TAXI_TYPE=$1 # yellow
 YEAR=$2 # 2020
 
 URL_PREFIX="https://github.com/DataTalksClub/nyc-tlc-data/releases/download"
