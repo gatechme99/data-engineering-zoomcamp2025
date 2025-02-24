@@ -16,3 +16,9 @@
 05-batch/code/data
 05-batch/code/zones
 05-batch/code/tmp
+
+google-cloud-sdk/
+/workspaces/data-engineering-zoomcamp2025/google-cloud-sdk/completion.bash.inc
+/workspaces/data-engineering-zoomcamp2025/google-cloud-cli-linux-x86_64.tar.gz
+
+.google/
