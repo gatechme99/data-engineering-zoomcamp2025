@@ -20,6 +20,11 @@ What's the output?
 
 
 ## Answer 1
+```
+3.3.2
+```
+
+![image](./images/q1.png)
 
 
 ## Question 2: Yellow October 2024
@@ -77,7 +82,10 @@ Spark’s User Interface which shows the application's dashboard runs on which l
 - 8080
 
 
-## Answer 5: 4040
+## Answer 5: 
+```
+4040
+```
 
 
 ## Question 6: Least frequent pickup location zone
